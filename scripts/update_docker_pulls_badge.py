@@ -35,10 +35,11 @@ def main():
 
     payload = {
         "schemaVersion": 1,
-        "label": "docker pulls",
+        "label": "Docker Pulls",
         "message": f"{pulls:,}",
-        "color": "blue",
+        "color": "0db7ed"
     }
+
     OUT.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
 
 if __name__ == "__main__":
