@@ -22,6 +22,18 @@ def load_previous_count() -> int:
             return 0
     return 0
 
+def format_count(n: int) -> str:
+    if n >= 1_000_000_000:
+        v = n / 1_000_000_000
+        return f"{v:.1f}".rstrip("0").rstrip(".") + "B"
+    if n >= 1_000_000:
+        v = n / 1_000_000
+        return f"{v:.1f}".rstrip("0").rstrip(".") + "M"
+    if n >= 1_000:
+        v = n / 1_000
+        return f"{v:.1f}".rstrip("0").rstrip(".") + "K"
+    return str(n)
+
 def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
 
@@ -36,7 +48,7 @@ def main():
     payload = {
         "schemaVersion": 1,
         "label": "Docker Pulls",
-        "message": f"{pulls:,}",
+        "message": format_count(pulls),
         "color": "0db7ed"
     }
 
