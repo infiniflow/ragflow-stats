@@ -1,0 +1,1 @@
+[![Docker Pulls](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/infiniflow/ragflow-stats/main/badges/docker-pulls.json&style=flat-square&logo=docker&logoColor=white)](https://hub.docker.com/r/infiniflow/ragflow)
